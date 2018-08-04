@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_applied_jobs"
+        android:icon="@drawable/ic_description_black_24dp"
+        android:title="Applied Jobs" />
+    <item
+        android:id="@+id/menu_just_for_you"
+        android:checked="true"
+        android:icon="@drawable/ic_face_black_24dp"
+        android:title="Profile" />
+    <item
+        android:id="@+id/menu_favorite_jobs"
+        android:icon="@drawable/ic_favorite_border_black_24dp"
+        android:title="Favorite Jobs" />
+</menu>
