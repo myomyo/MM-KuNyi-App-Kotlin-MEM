@@ -48,7 +48,8 @@
         <LinearLayout
             android:id="@+id/ll_login"
             android:layout_below="@+id/btn_login"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
+            android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="@dimen/margin_medium_2"
@@ -81,9 +82,9 @@
             android:text="Register New Account"
             android:textColor="@color/primaryColor"
             android:layout_below="@+id/ll_login"
+            android:layout_alignRight="@+id/ll_login"
             android:foreground="@drawable/ripple"
-            android:padding="8dp"
-            android:layout_alignParentRight="true"
+            android:paddingVertical="8dp"
             android:layout_marginTop="@dimen/margin_medium"
             />
 

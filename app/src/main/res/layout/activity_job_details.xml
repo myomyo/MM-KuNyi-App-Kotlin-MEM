@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:fitsSystemWindows="true"
     tools:context=".activities.JobDetailsActivity">
 
@@ -16,37 +16,20 @@
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="150dp"
             app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:src="@drawable/bg_blue" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Job Details"
-                android:textSize="@dimen/text_regular_3x"
-                android:textColor="@color/primaryTextColor"
-                android:layout_marginStart="@dimen/margin_medium_2"
-                android:layout_marginTop="@dimen/margin_medium_2"/>
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title">
 
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin">
-                <!--<TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Job Details"
-                    app:popupTheme="@style/AppTheme.PopupOverlay"/>-->
-
-            </android.support.v7.widget.Toolbar>
-
+                app:layout_collapseMode="pin"
+                app:title="@string/title_details"
+                app:titleTextColor="@color/primaryTextColor"
+                />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -55,8 +38,9 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:behavior_overlapTop="50dp"
+        app:behavior_overlapTop="60dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -74,27 +58,28 @@
                     android:layout_margin="@dimen/margin_medium_2">
 
                     <TextView
-                        android:id="@+id/tvJobTitle"
+                        android:id="@+id/tvTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="House Keeping"
-                        android:textSize="@dimen/text_regular_3x"
-                        android:textColor="@color/primaryColor"/>
-                    <view
+                        android:textColor="@color/primaryColor"
+                        android:textSize="@dimen/text_regular_3x" />
+
+                    <View
                         android:id="@+id/divider"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_below="@+id/tvJobTitle"
-                        android:layout_marginVertical="@dimen/margin_medium_2"
-                        android:background="@color/primaryColor"/>
+                        android:layout_below="@+id/tvTitle"
+                        android:layout_marginVertical="@dimen/margin_card_medium_2"
+                        android:background="@color/divider" />
 
                     <LinearLayout
                         android:id="@+id/ll_Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/divider"
-                        android:orientation="vertical"
-                        android:layout_marginRight="@dimen/margin_medium">
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/tvPostedOnTitle"
@@ -147,9 +132,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/divider"
-                        android:layout_toRightOf="@+id/ll_Title"
                         android:layout_marginLeft="@dimen/margin_medium_2"
+                        android:layout_toRightOf="@+id/ll_Title"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/tvPostedOn"
                             android:layout_width="wrap_content"
@@ -197,32 +183,39 @@
                     </LinearLayout>
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
+
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_medium_2"
-                android:layout_marginHorizontal="@dimen/margin_medium_2">
+                android:layout_marginHorizontal="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="@dimen/margin_medium_2">
+                    android:layout_margin="@dimen/margin_medium_2"
+                    android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Description"
-                        android:textSize="@dimen/text_regular_3x"
-                        android:textColor="@color/secondaryTextColor"/>
-                    <view
+                        android:textColor="@color/secondaryTextColor"
+                        android:textSize="@dimen/text_regular_3x" />
+
+                    <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginVertical="@dimen/margin_medium_2"
-                        android:background="@color/primaryColor"/>
+                        android:layout_marginVertical="@dimen/margin_card_medium_2"
+                        android:background="@color/divider" />
+
                     <TextView
+                        android:id="@+id/tvFullDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Daily office cleaning duties (Toilet, carpet, pantry). Maintains a clean, sanitary and safe health care environment by daily cleaning and supplying of patient rooms, nursing stations, lounges."/>
+                        android:textColor="@color/secondaryTextColor"
+                        android:textSize="@dimen/text_regular"
+                        android:text="Daily office cleaning duties (Toilet, carpet, pantry). Maintains a clean, sanitary and safe health care environment by daily cleaning and supplying of patient rooms, nursing stations, lounges." />
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -230,30 +223,37 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium_2"
-                android:layout_marginHorizontal="@dimen/margin_medium_2">
+                android:layout_marginBottom="@dimen/margin_xxlarge">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="@dimen/margin_medium_2">
+                    android:layout_margin="@dimen/margin_medium_2"
+                    android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Requirement"
-                        android:textSize="@dimen/text_regular_3x"
-                        android:textColor="@color/secondaryTextColor"/>
-                    <view
+                        android:textColor="@color/secondaryTextColor"
+                        android:textSize="@dimen/text_regular_3x" />
+
+                    <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginVertical="@dimen/margin_medium_2"
-                        android:background="@color/primaryColor"/>
+                        android:layout_marginVertical="@dimen/margin_card_medium_2"
+                        android:background="@color/divider" />
+
                     <TextView
                         android:id="@+id/tvSkill"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Good at Housekeeping"/>
+                        android:text="Good at Housekeeping"
+                        android:textColor="@color/secondaryTextColor"
+                        android:textSize="@dimen/text_regular"
+                        android:layout_marginBottom="@dimen/margin_medium"/>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -265,20 +265,19 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:padding="@dimen/margin_medium_2">
+        android:layout_gravity="bottom">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_medium_2"
             android:background="@drawable/bg_round_yellow"
-            android:textColor="@color/primaryTextColor"
+            android:paddingVertical="@dimen/margin_medium"
             android:text="Apply Job"
             android:textAlignment="center"
-            android:textSize="@dimen/text_regular_3x"
-            android:paddingVertical="@dimen/margin_medium_2"/>
+            android:textColor="@color/primaryTextColor"
+            android:textSize="@dimen/text_regular_3x" />
     </RelativeLayout>
-
 
 
 </android.support.design.widget.CoordinatorLayout>

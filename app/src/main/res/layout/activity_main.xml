@@ -26,16 +26,23 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/swipeRefreshLayout"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rvJobs"
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <com.mem.mmkunyi.kotlin.components.SmartRecyclerView
+                    android:id="@+id/rvJobs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.v4.widget.SwipeRefreshLayout>
 
             <include
                 android:id="@+id/vpEmptyJobs"
@@ -44,7 +51,8 @@
                 android:layout_height="match_parent"
                 android:visibility="gone" />
 
-        </android.support.v4.widget.SwipeRefreshLayout>
+        </FrameLayout>
+
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
@@ -61,7 +69,7 @@
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/menu_main"
         app:headerLayout="@layout/view_pod_login_before"
-        app:itemTextColor="@drawable/state_main_menu_item"/>
+        app:itemTextColor="@drawable/state_main_menu_item"
+        app:menu="@menu/menu_main" />
 </android.support.v4.widget.DrawerLayout>

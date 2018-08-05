@@ -7,7 +7,7 @@
         android:id="@+id/iv_login_user_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/bg_profile"
+        android:src="@drawable/background"
         android:scaleType="centerCrop"
         />
 
@@ -32,7 +32,8 @@
         android:text="John Doe"
         android:layout_toRightOf="@id/iv_login_user"
         android:layout_alignTop="@id/iv_login_user"
-        android:textColor="@color/primaryColor"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:textColor="@color/primaryDarkColor"
         android:textSize="@dimen/text_regular_3x"
         />
 
@@ -44,8 +45,8 @@
         android:layout_alignLeft="@id/tv_name"
         android:layout_below="@id/tv_name"
         android:layout_marginTop="@dimen/margin_small"
-        android:textSize="@dimen/text_regular"
-        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/text_regular_2x"
+        android:textColor="@color/primaryDarkColor"
         />
 
     <Button

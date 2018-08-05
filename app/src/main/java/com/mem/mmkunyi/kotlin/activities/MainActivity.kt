@@ -41,7 +41,7 @@ class MainActivity : BaseActivity(), JobItemDelegate, BeforeLoginDelegate {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
 
-        //rvJobs.setEmptyView(vpEmptyJobs)
+        rvJobs.setEmptyView(vpEmptyJobs)
         rvJobs.layoutManager = LinearLayoutManager(applicationContext)
         mSmartScrollListener = SmartScrollListener(object : SmartScrollListener.OnSmartScrollListener{
             override fun onListEndReach() {
@@ -92,7 +92,7 @@ class MainActivity : BaseActivity(), JobItemDelegate, BeforeLoginDelegate {
 
     override fun onTabJobItem(job: JobVO?) {
         val intent = Intent(applicationContext, JobDetailsActivity::class.java)
-        intent.putExtra(AppConstants.JOB_ID, job!!.jobPostId)
+        intent.putExtra("jobId", job!!.jobPostId)
         startActivity(intent)
     }
 
@@ -144,7 +144,7 @@ class MainActivity : BaseActivity(), JobItemDelegate, BeforeLoginDelegate {
         Snackbar.make(rvJobs, "ERROR : " + apiErrorEvent.getMsg(), Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
 
-        vpEmptyJobs.visibility = View.VISIBLE
+        //vpEmptyJobs.visibility = View.VISIBLE
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -152,5 +152,6 @@ class MainActivity : BaseActivity(), JobItemDelegate, BeforeLoginDelegate {
         swipeRefreshLayout.isRefreshing = false
         Snackbar.make(rvJobs, "ERROR : " + emptyDataLoadedEvent.errorMsg, Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+        vpEmptyJobs.visibility = View.VISIBLE
     }
 }
