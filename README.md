@@ -24,4 +24,14 @@ For the network call, use the retrofit
 
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    
+<b>Screenshot</b>
+<p float="left">
+<img src="/screenshot/Screenshot_1.jpg" height="400">
+<img src="/screenshot/Screenshot_2.jpg" height="400">
+<img src="/screenshot/Screenshot_3.jpg" height="400">
+<p float="left"> 
+<img src="/screenshot/Screenshot_4.jpg" height="400">
+<img src="/screenshot/Screenshot_5.jpg" height="400">
+<p float="left"> 
 
